@@ -49,4 +49,29 @@ public class Cart {
         }
         return total;
     }
+    public void printCart() {
+        System.out.println("************* CART *************");
+        System.out.println("Ordered Items:");
+    
+        for (int i = 0; i < qtyOrdered; i++) {
+            DigitalVideoDisc disc = items[i];
+            System.out.println((i + 1) + ". DVD - " + disc.getTitle() + " - " 
+                               + disc.getCategory() + " - " 
+                               + disc.getDirector() + " - " 
+                               + disc.getLength() + ": " 
+                               + disc.getCost() + "$");
+        }
+    
+        System.out.println("********************************");
+        System.out.println("Total cost: " + totalCost() + "$");
+    }
+    public DigitalVideoDisc searchCart(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (items[i].getTitle().equalsIgnoreCase(title)) {
+                return items[i];  
+            }
+        }
+        return null;  
+    }
+    
 }
