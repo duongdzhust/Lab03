@@ -1,7 +1,7 @@
 package lab02;
 
 public class Cart {
-	private DigitalVideoDisc[] items;
+    private DigitalVideoDisc[] items;
     private int qtyOrdered;
     private static final int MAX_CAPACITY = 10;
 
@@ -23,6 +23,40 @@ public class Cart {
         }
     }
 
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+        for (DigitalVideoDisc disc : dvdList) {
+            if (qtyOrdered < MAX_CAPACITY) {
+                items[qtyOrdered] = disc;
+                qtyOrdered++;
+                if (qtyOrdered == MAX_CAPACITY) {
+                    System.out.println("The cart is almost full.");
+                    break;
+                }
+            } else {
+                System.out.println("Cannot add more discs. The cart is full.");
+                break;
+            }
+        }
+        System.out.println("Discs have been added.");
+    }
+
+    public void addDigitalVideoDisc(DigitalVideoDisc... dvds) {
+        for (DigitalVideoDisc disc : dvds) {
+            if (qtyOrdered < MAX_CAPACITY) {
+                items[qtyOrdered] = disc;
+                qtyOrdered++;
+                if (qtyOrdered == MAX_CAPACITY) {
+                    System.out.println("The cart is almost full.");
+                    break;
+                }
+            } else {
+                System.out.println("Cannot add more discs. The cart is full.");
+                break;
+            }
+        }
+        System.out.println("Discs have been added.");
+    }
+
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         boolean found = false;
         for (int i = 0; i < qtyOrdered; i++) {
@@ -42,6 +76,7 @@ public class Cart {
         }
     }
 
+    // Method to calculate the total cost of all items in the cart
     public float totalCost() {
         float total = 0;
         for (int i = 0; i < qtyOrdered; i++) {
