@@ -1,0 +1,2 @@
+-Java cho phép tạo nhiều constructor trong một class, gọi là nạp chồng constructor (constructor overloading). Điều này có nghĩa là có thể có các constructor khác nhau với danh sách tham số khác nhau, cho phép bạn tạo một đối tượng DVD bằng title (tiêu đề) trong một constructor và bằng category (thể loại) trong một constructor khác.
+-Tính năng nạp chồng constructor của Java cho phép bạn tạo đối tượng theo nhiều cách khác nhau, mang lại sự linh hoạt đồng thời duy trì mã nguồn rõ ràng và có tổ chức.
