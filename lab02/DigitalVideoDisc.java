@@ -22,6 +22,23 @@ public class DigitalVideoDisc {
         this.category = category;
         this.cost = cost;
     }
+    private static int nbDigitalVideoDiscs = 0;
+    private int id;
+    public DigitalVideoDisc(String title) {
+        this.title = title;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
+    }
+    public static int getNbDigitalVideoDiscs() {
+        return nbDigitalVideoDiscs;
+    }
+    
+    public int getId() {
+        return id;
+    }
+    
+
+
 
     // Getter cho các thuộc tính
     public String getTitle() {
